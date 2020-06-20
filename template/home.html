@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% load static %}
+
+<style>
+h1{
+	font-family:sans-serif;color:magenta;
+	
+}
+
+</style>
+
+
+{% block myblock %}
+<div class="jumbotron">
+  <h1 class="display-4">Shoprick</h1>
+  <p class="lead">Online delivery of grocery Items at your doorsteps anywhere in Mussoorie</p>
+  <hr class="my-4">
+  <h1>CATEGORIES</h1>
+</div>
+<div class="container-fluid">
+	<div class="row">
+
+
+{% for item in cat %}
+
+<div class="col-md-3 p-3 text-center">
+	<div style="box-shadow:0px 0px 10px black;">
+<a href="{% url 'allproduct' item.id %}"><img src="/media/{{item.cover_pic}}" alt="" height="200px" width="100%"></a>
+
+	<a href="{% url 'allproduct' item.id %}"><h1>{{item.cat_name}}</h1></a>
+	</div>
+</div>
+
+
+{% endfor %}
+</div>
+</div>
+
+
+{% endblock %}

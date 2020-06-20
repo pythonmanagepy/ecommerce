@@ -1,0 +1,59 @@
+
+{% extends 'base.html' %}
+{% block myblock %}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+			<div style ="background:url('/static/images/laptop5.jpg')" class="h-100"></div>
+		</div>
+		<div class="col-md-6">
+			<h1>Sign Up here</h1>
+			<form action="" method="post">
+				{% csrf_token %}
+				<div class="form-group">
+
+					<div class="row">
+						<div class="col-md-6">
+							<label>First Name</label>
+							<input type="text" class="form-control" placeholder="First Name" name="first">
+						</div>
+						<div class="col-md-6">
+							<label>Last Name</label>
+							<input type="text" class="form-control" placeholder="Last Name" name="last">
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label>Username</label>
+
+					<input type="text" class="form-control" placeholder="Username" name="uname" id="username">
+				</div>
+				<div class="form-group">
+					<label>Password</label>
+					<input type="text" class="form-control" placeholder="Password" name="password">
+				</div>
+				<div class="form-group">
+					<label>Contact Number</label>
+					<input type="text" class="form-control" placeholder="Phone Number" name="phone">
+				</div>
+				<div class="form-group">
+					<label>User Type</label>
+					<select name="utype" class="form-control">
+						<option value="cust">I am customer</option>
+						<option value="sell">I am Seller</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<input type="submit" class="btn btn-success" value="Sign Up">
+				</div>
+			</form>
+
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'allproduct.html' %}
+{% block myblock %}
+
+
+<script>
+	saveCart();
+
+	function saveCart(){
+	localStorage.setItem("shoppingcart",JSON.stringify(cart));
+	console.log(shoppingcart);
+}
+	</script>
+
+{% endblock %}
